@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: good-eatz-react
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: good-eatz-react
+    server: {{ .Values.spec.destination.server }}
+  project: default
+  source:
+    repoURL: https://github.com/eugeneshanga/CS490-DoctorPatientFrontend
+    chart: good-eatz-react
+    targetRevision: latest
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
