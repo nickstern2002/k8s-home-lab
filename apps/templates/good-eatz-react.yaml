@@ -12,8 +12,8 @@ spec:
   project: default
   source:
     repoURL: https://github.com/eugeneshanga/CS490-DoctorPatientFrontend
-    chart: good-eatz-react
-    targetRevision: latest
+    path: good-eatz-react
+    targetRevision: main
   syncPolicy:
     automated:
       prune: true
