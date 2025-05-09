@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: good-eatz-pharmacy-flask
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: good-eatz-pharmacy-flask
+    server: {{ .Values.spec.destination.server }}
+  project: default
+  source:
+    repoURL: https://github.com/eugeneshanga/CS490-DoctorPatientPharmacyBackend
+    path: good-eatz-pharmacy-flask
+    targetRevision: main
+  syncPolicy:
+    automated:
+      selfHeal: true
