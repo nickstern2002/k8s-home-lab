@@ -18,6 +18,7 @@ spec:
       parameters:
         - name: gitCommit
           value: "{{`{{.app.status.sync.revision}}`}}"
+          forceString: true
   syncPolicy:
     automated:
       selfHeal: true
