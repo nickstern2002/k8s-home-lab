@@ -14,6 +14,10 @@ spec:
     repoURL: https://github.com/eugeneshanga/CS490-DoctorPatientFrontend
     path: good-eatz-react
     targetRevision: main
+    helm:
+      parameters:
+        - name: gitCommit
+          value: "{{`{{.app.status.sync.revision}}`}}"
   syncPolicy:
     automated:
       selfHeal: true
