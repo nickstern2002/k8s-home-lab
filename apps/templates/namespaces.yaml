@@ -22,20 +22,6 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: good-eatz-react
-  annotations:
-    argocd.argoproj.io/sync-wave: "-1"
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: good-eatz-doctor-flask
-  annotations:
-    argocd.argoproj.io/sync-wave: "-1"
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: good-eatz-pharmacy-flask
+  name: good-eatz-system
   annotations:
     argocd.argoproj.io/sync-wave: "-1"
